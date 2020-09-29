@@ -1,42 +1,21 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author huisheng.jin
- * @version 2019/12/21.
+ * @date 2020/9/29.
  */
 public class IsomorphicChecker {
-    public static boolean check(String first, String second) {
-        String[] firstArray = first.split("");
-        String[] secondArray = second.split("");
-
-        Map<String, String> convertedChar = new HashMap<>(3);
-        for (int i = 0; i < firstArray.length; i++) {
-            if (firstArray[i].equals(secondArray[i])) {
-                continue;
-            }
-            if (convertedChar.containsKey(secondArray[i])) {
-                if (convertedChar.get(secondArray[i]).equals(firstArray[i])) {
-                    firstArray[i] = secondArray[i];
-                } else {
-                    return false;
-                }
-            } else {
-                if (convertedChar.containsValue(firstArray[i])) {
-                    return false;
-                } else {
-                    convertedChar.put(secondArray[i], firstArray[i]);
-                    firstArray[i] = secondArray[i];
-                }
+    public static Boolean check(String first, String second) {
+        if (first.length() != second.length()) {
+            return false;
+        }
+        CharReplaceChecker charReplaceChecker = new CharReplaceChecker();
+        for (int i = 0; i < first.length(); i++) {
+            char firstChar = first.charAt(i);
+            char secondChar = second.charAt(i);
+            if (!charReplaceChecker.canReplace(firstChar, secondChar)) {
+                return false;
             }
         }
-
-        return toString(firstArray).equals(second);
+        return true;
     }
-
-    private static String toString(String[] firstArray) {
-        return Arrays.stream(firstArray).reduce((x, y) -> x + y).get();
-    }
-
 }

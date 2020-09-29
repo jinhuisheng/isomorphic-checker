@@ -20,3 +20,6 @@ Scenario: Implement a checker to determine if two strings are isomorphic
 
 * 输入: s = "foo", t = "bar"; 输出: false
 
+异常：
+
+* 输入: s = "f", t = "oo"; 输出: false 长度不同
