@@ -1,6 +1,5 @@
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * @author huisheng.jin
@@ -10,32 +9,37 @@ public class CharReplaceChecker {
     private Map<Character, Character> map = new HashMap<>();
 
     public Boolean canReplace(char first, char second) {
+        if (checkValid(first, second)) {
+            return false;
+        }
         if (existReplaced(first, second)) {
             return true;
-        }
-        if (oneCharReplaced(first, second)) {
-            return false;
         }
         map.put(first, second);
         return true;
     }
 
-    private boolean oneCharReplaced(char first, char second) {
-        String charListString = getReplacedCharsStr();
-        return charListString.indexOf(first) >= 0
-                || charListString.indexOf(second) >= 0;
-    }
-
-    private String getReplacedCharsStr() {
-        return map.entrySet().stream()
-                .map(entry -> entry.getKey() + "," + entry.getValue())
-                .collect(Collectors.joining(","));
+    private boolean checkValid(char first, char second) {
+        for (Map.Entry<Character, Character> entry : map.entrySet()) {
+            Character key = entry.getKey();
+            Character value = entry.getValue();
+            if (key.equals(first) && !value.equals(second)) {
+                return true;
+            }
+            if (key.equals(second) && !value.equals(first)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private boolean existReplaced(char first, char second) {
         return map.entrySet().stream()
                 .anyMatch(entry -> (entry.getKey().equals(first)
-                        && entry.getValue().equals(second)));
+                        && entry.getValue().equals(second))
+                        || (entry.getKey().equals(second)
+                        && entry.getValue().equals(first))
+                );
     }
 
     public Integer size() {

@@ -27,5 +27,7 @@ public class CharReplaceCheckerTest {
         assertThat(charReplaceChecker.size()).isEqualTo(2);
         assertThat(charReplaceChecker.canReplace('g', 'l')).isEqualTo(true);
         assertThat(charReplaceChecker.size()).isEqualTo(3);
+        assertThat(charReplaceChecker.canReplace('b', 'a')).isEqualTo(true);
+        assertThat(charReplaceChecker.size()).isEqualTo(3);
     }
 }
