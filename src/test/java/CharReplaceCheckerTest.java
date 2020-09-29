@@ -17,10 +17,15 @@ public class CharReplaceCheckerTest {
     void should_check_success() {
         CharReplaceChecker charReplaceChecker = new CharReplaceChecker();
         assertThat(charReplaceChecker.canReplace('a', 'b')).isEqualTo(true);
+        assertThat(charReplaceChecker.size()).isEqualTo(1);
         assertThat(charReplaceChecker.canReplace('a', 'b')).isEqualTo(true);
+        assertThat(charReplaceChecker.size()).isEqualTo(1);
         assertThat(charReplaceChecker.canReplace('c', 'd')).isEqualTo(true);
+        assertThat(charReplaceChecker.size()).isEqualTo(2);
         assertThat(charReplaceChecker.canReplace('d', 'a')).isEqualTo(false);
         assertThat(charReplaceChecker.canReplace('a', 'd')).isEqualTo(false);
+        assertThat(charReplaceChecker.size()).isEqualTo(2);
         assertThat(charReplaceChecker.canReplace('g', 'l')).isEqualTo(true);
+        assertThat(charReplaceChecker.size()).isEqualTo(3);
     }
 }

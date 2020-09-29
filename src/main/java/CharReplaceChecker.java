@@ -37,4 +37,8 @@ public class CharReplaceChecker {
                 .anyMatch(entry -> (entry.getKey().equals(first)
                         && entry.getValue().equals(second)));
     }
+
+    public Integer size() {
+        return map.size();
+    }
 }
