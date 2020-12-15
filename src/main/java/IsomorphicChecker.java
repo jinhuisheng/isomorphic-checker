@@ -22,7 +22,7 @@ public class IsomorphicChecker {
     private boolean check() {
         char[] firstChars = first.toCharArray();
         char[] secondChars = second.toCharArray();
-        for (int i = 0; i < firstChars.length; i++) {
+        for (int i = 0; i < first.length(); i++) {
             if (canReplace(firstChars[i], secondChars[i])) {
                 map.put(firstChars[i], secondChars[i]);
             } else {
