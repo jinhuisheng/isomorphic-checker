@@ -9,7 +9,7 @@ public class IsomorphicChecker {
         if (first.equals("ad") && second.equals("eg")) {
             HashMap<Character, Character> map = new HashMap<>();
             map.put('a', 'e');
-            if (check(map, 'd')) {
+            if (check(map, 'd', 'g')) {
                 return false;
             } else {
                 return true;
@@ -21,7 +21,10 @@ public class IsomorphicChecker {
         return true;
     }
 
-    private static boolean check(HashMap<Character, Character> map, char firstChar) {
-        return (map.containsKey(firstChar) && !map.containsValue('g')) || (!map.containsKey(firstChar) && map.containsValue('g')) || (map.containsKey('g') && !map.containsValue('d')) || (!map.containsKey('g') && map.containsValue('d'));
+    private static boolean check(HashMap<Character, Character> map, char firstChar, char secondChar) {
+        return (map.containsKey(firstChar) && !map.containsValue(secondChar))
+                || (!map.containsKey(firstChar) && map.containsValue(secondChar))
+                || (map.containsKey(secondChar) && !map.containsValue(firstChar))
+                || (!map.containsKey(secondChar) && map.containsValue(firstChar));
     }
 }
