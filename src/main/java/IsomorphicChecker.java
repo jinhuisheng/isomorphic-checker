@@ -24,7 +24,7 @@ public class IsomorphicChecker {
         char[] secondChars = second.toCharArray();
         for (int i = 0; i < first.length(); i++) {
             if (canReplace(first.charAt(i), second.charAt(i))) {
-                map.put(firstChars[i], secondChars[i]);
+                map.put(first.charAt(i), second.charAt(i));
             } else {
                 return false;
             }
