@@ -30,5 +30,7 @@ Scenario: Implement a checker to determine if two strings are isomorphic
 
 字符顺序不变
 两个字符串都是相同位置上的替换
-比如： "sa"-"tb"  ,s和t可以互换，a和b可以互换；
+比如： 
+"sa"-"tb"  ,s和t可以互换，a和b可以互换；
+替换过的只能和之前的互换组合一致，"s"-"t",或者"t"-"s"
 
