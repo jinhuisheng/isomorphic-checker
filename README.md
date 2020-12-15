@@ -33,4 +33,6 @@ Scenario: Implement a checker to determine if two strings are isomorphic
 比如： 
 "sa"-"tb"  ,s和t可以互换，a和b可以互换；
 替换过的只能和之前的互换组合一致，"s"-"t",或者"t"-"s"
+"ss"-"tb",因为s已经和t替换过了，s就不能za
 
+如果对应位置上的字符相同，也是可以替换的，但之后就不能再和别的字符替换。
