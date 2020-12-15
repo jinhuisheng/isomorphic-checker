@@ -9,7 +9,7 @@ public class IsomorphicChecker {
     private final String second;
     private final HashMap<Character, Character> map;
 
-    public IsomorphicChecker(String first, String second) {
+    private IsomorphicChecker(String first, String second) {
         map = new HashMap<>();
         this.first = first;
         this.second = second;
@@ -20,8 +20,6 @@ public class IsomorphicChecker {
     }
 
     private boolean check() {
-        char[] firstChars = first.toCharArray();
-        char[] secondChars = second.toCharArray();
         for (int i = 0; i < first.length(); i++) {
             if (canReplace(first.charAt(i), second.charAt(i))) {
                 map.put(first.charAt(i), second.charAt(i));
