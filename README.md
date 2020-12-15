@@ -1,5 +1,3 @@
-# isomorphic-checker
-
 Scenario: Implement a checker to determine if two strings are isomorphic
 给定两个字符串 s 和 t，判断它们是否是同构的。
 如果 s 中的字符可以被替换得到 t ，那么这两个字符串是同构的。
