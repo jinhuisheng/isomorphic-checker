@@ -22,3 +22,9 @@ Scenario: Implement a checker to determine if two strings are isomorphic
 
 * 输入: s = "f", t = "oo"; 输出: false 长度不同
 
+
+## 需求分析
+
+可替换 ？
+替换了一个，之后的替换，不能有之前已经替换过的词组
+
