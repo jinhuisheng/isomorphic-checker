@@ -21,8 +21,10 @@ public class IsomorphicChecker {
 
     private boolean check() {
         for (int i = 0; i < first.length(); i++) {
-            if (canReplace(first.charAt(i), second.charAt(i))) {
-                map.put(first.charAt(i), second.charAt(i));
+            char leftChar = first.charAt(i);
+            char rightChar = second.charAt(i);
+            if (canReplace(leftChar, rightChar)) {
+                map.put(leftChar, rightChar);
             } else {
                 return false;
             }
