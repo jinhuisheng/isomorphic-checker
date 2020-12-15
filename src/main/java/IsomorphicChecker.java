@@ -4,6 +4,6 @@
  */
 public class IsomorphicChecker {
     public static boolean check(String first, String second) {
-        return true;
+        return first.length() == second.length();
     }
 }
