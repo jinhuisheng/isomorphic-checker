@@ -8,6 +8,11 @@ public class IsomorphicChecker {
     public static boolean check(String first, String second) {
         if (first.equals("ad") && second.equals("eg")) {
             HashMap<Character, Character> map = new HashMap<>();
+            char[] firstChars = first.toCharArray();
+            char[] secondChars = second.toCharArray();
+            for (int i = 0; i < firstChars.length; i++) {
+
+            }
             map.put('a', 'e');
             if (check(map, 'd', 'g')) {
                 return false;
