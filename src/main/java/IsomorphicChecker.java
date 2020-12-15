@@ -9,7 +9,7 @@ public class IsomorphicChecker {
         if (first.equals("ad") && second.equals("eg")) {
             HashMap<Character, Character> map = new HashMap<>();
             map.put('a', 'e');
-            map.
+
             return true;
         }
         if (first.equals(second)) {
