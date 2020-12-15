@@ -6,21 +6,20 @@ import java.util.HashMap;
  */
 public class IsomorphicChecker {
     public static boolean check(String first, String second) {
-        if (first.equals("ad") && second.equals("eg")) {
-            HashMap<Character, Character> map = new HashMap<>();
-            char[] firstChars = first.toCharArray();
-            char[] secondChars = second.toCharArray();
-            for (int i = 0; i < firstChars.length; i++) {
-                if (check(map, firstChars[i], secondChars[i])) {
-                    return false;
-                } else {
-                    map.put(firstChars[i], secondChars[i]);
-                }
+        HashMap<Character, Character> map = new HashMap<>();
+        char[] firstChars = first.toCharArray();
+        char[] secondChars = second.toCharArray();
+        for (int i = 0; i < firstChars.length; i++) {
+            if (check(map, firstChars[i], secondChars[i])) {
+                return false;
+            } else {
+                map.put(firstChars[i], secondChars[i]);
             }
         }
-        if (first.equals(second)) {
-            return true;
-        }
+//        if (first.equals(second)) {
+//            return true;
+//        }
+//        return true;
         return true;
     }
 
