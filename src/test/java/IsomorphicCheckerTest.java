@@ -10,5 +10,6 @@ public class IsomorphicCheckerTest {
     @Test
     void check() {
         assertThat(IsomorphicChecker.check("a", "a")).isEqualTo(true);
+        assertThat(IsomorphicChecker.check("a", "e")).isEqualTo(true);
     }
 }
