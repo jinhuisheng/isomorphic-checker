@@ -15,10 +15,10 @@ public class IsomorphicChecker {
     }
 
     public static boolean check(String first, String second) {
-        return new IsomorphicChecker(first, second).checkSS(first, second);
+        return new IsomorphicChecker(first, second).checkSS();
     }
 
-    private boolean checkSS(String first, String second) {
+    private boolean checkSS() {
         char[] firstChars = first.toCharArray();
         char[] secondChars = second.toCharArray();
         for (int i = 0; i < firstChars.length; i++) {
