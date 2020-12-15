@@ -15,14 +15,14 @@ public class IsomorphicChecker {
     }
 
     public static boolean check(String first, String second) {
-        return new IsomorphicChecker(first, second).checkSS();
+        return new IsomorphicChecker(first, second).check();
     }
 
-    private boolean checkSS() {
+    private boolean check() {
         char[] firstChars = first.toCharArray();
         char[] secondChars = second.toCharArray();
         for (int i = 0; i < firstChars.length; i++) {
-            if (check(firstChars[i], secondChars[i])) {
+            if (assertNotIsomorphic(firstChars[i], secondChars[i])) {
                 return false;
             } else {
                 map.put(firstChars[i], secondChars[i]);
@@ -31,7 +31,7 @@ public class IsomorphicChecker {
         return true;
     }
 
-    private boolean check(char firstChar, char secondChar) {
+    private boolean assertNotIsomorphic(char firstChar, char secondChar) {
         return (map.containsKey(firstChar) && !map.containsValue(secondChar))
                 || (!map.containsKey(firstChar) && map.containsValue(secondChar))
                 || (map.containsKey(secondChar) && !map.containsValue(firstChar))
