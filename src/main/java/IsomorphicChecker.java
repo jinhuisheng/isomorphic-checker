@@ -16,10 +16,6 @@ public class IsomorphicChecker {
                 map.put(firstChars[i], secondChars[i]);
             }
         }
-//        if (first.equals(second)) {
-//            return true;
-//        }
-//        return true;
         return true;
     }
 
