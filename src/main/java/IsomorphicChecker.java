@@ -7,9 +7,10 @@ import java.util.HashMap;
 public class IsomorphicChecker {
     private final String first;
     private final String second;
-    private HashMap<Character, Character> map = new HashMap<>();
+    private final HashMap<Character, Character> map;
 
     public IsomorphicChecker(String first, String second) {
+        map = new HashMap<>();
         this.first = first;
         this.second = second;
     }
