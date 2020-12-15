@@ -22,7 +22,7 @@ public class IsomorphicChecker {
         char[] firstChars = first.toCharArray();
         char[] secondChars = second.toCharArray();
         for (int i = 0; i < firstChars.length; i++) {
-            if (!assertNotIsomorphic(firstChars[i], secondChars[i])) {
+            if (assertNotIsomorphic(firstChars[i], secondChars[i])) {
                 return false;
             } else {
                 map.put(firstChars[i], secondChars[i]);
@@ -32,7 +32,7 @@ public class IsomorphicChecker {
     }
 
     private boolean assertNotIsomorphic(char firstChar, char secondChar) {
-        return !(map.containsKey(firstChar) && !map.containsValue(secondChar))
+        return (map.containsKey(firstChar) && !map.containsValue(secondChar))
                 || (!map.containsKey(firstChar) && map.containsValue(secondChar))
                 || (map.containsKey(secondChar) && !map.containsValue(firstChar))
                 || (!map.containsKey(secondChar) && map.containsValue(firstChar));
