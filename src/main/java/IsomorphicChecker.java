@@ -13,17 +13,10 @@ public class IsomorphicChecker {
             for (int i = 0; i < firstChars.length; i++) {
                 if (check(map, firstChars[i], secondChars[i])) {
                     return false;
-                }
-                else {
+                } else {
                     map.put(firstChars[i], secondChars[i]);
                 }
             }
-//            map.put('a', 'e');
-//            if (check(map, 'd', 'g')) {
-//                return false;
-//            } else {
-//                return true;
-//            }
         }
         if (first.equals(second)) {
             return true;
