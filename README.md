@@ -28,3 +28,6 @@ Scenario: Implement a checker to determine if two strings are isomorphic
 可替换 ？
 替换了一个，之后的替换，不能有之前已经替换过的词组
 
+字符顺序不变
+两个字符串都是相同位置上的替换
+比如： "sa"
