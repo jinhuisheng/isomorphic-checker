@@ -34,7 +34,6 @@ public class IsomorphicChecker {
 
     private boolean canReplace(char firstChar, char secondChar) {
         return (map.containsKey(firstChar) && map.containsValue(secondChar))
-                ||
-                (!map.containsKey(firstChar) && !map.containsValue(secondChar));
+                || (!map.containsKey(firstChar) && !map.containsValue(secondChar));
     }
 }
