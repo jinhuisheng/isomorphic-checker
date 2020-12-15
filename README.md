@@ -37,3 +37,6 @@ Scenario: Implement a checker to determine if two strings are isomorphic
 既可以是s->t,也可以是t->s 可替换
 
 如果对应位置上的字符相同，也是可以替换的，但之后就不能再和别的字符替换。
+
+
+每次测试都要想着驱动出来业务，或者消除坏味道
