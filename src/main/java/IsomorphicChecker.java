@@ -7,10 +7,9 @@ import java.util.HashMap;
 public class IsomorphicChecker {
     private final String first;
     private final String second;
-    private static HashMap<Character, Character> map = new HashMap<>();
+    private HashMap<Character, Character> map = new HashMap<>();
 
     public IsomorphicChecker(String first, String second) {
-
         this.first = first;
         this.second = second;
     }
@@ -20,7 +19,6 @@ public class IsomorphicChecker {
     }
 
     private boolean checkSS(String first, String second) {
-        map = new HashMap<>();
         char[] firstChars = first.toCharArray();
         char[] secondChars = second.toCharArray();
         for (int i = 0; i < firstChars.length; i++) {
