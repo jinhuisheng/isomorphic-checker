@@ -14,5 +14,6 @@ public class IsomorphicCheckerTest {
         assertThat(IsomorphicChecker.check("ad", "eg")).isEqualTo(true);
         assertThat(IsomorphicChecker.check("ad", "ee")).isEqualTo(false);
         assertThat(IsomorphicChecker.check("egg", "add")).isEqualTo(true);
+        assertThat(IsomorphicChecker.check("foo", "ade")).isEqualTo(false);
     }
 }
